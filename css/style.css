@@ -1,0 +1,103 @@
+/* saira font link  */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Saira+Condensed:wght@100;200;300;400;500;600;700;900&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+
+
+
+header {
+    background: #f1f1f1;
+    text-align: center;
+    padding: 7px 0px;
+    font-family: Saira Condensed;
+}
+.bank_name_Title h3 {
+    font-size: 43px;
+    font-family: 'Saira Condensed';
+    font-weight: 300;
+}
+
+.bank_name_Title p {
+    font-size: 20px;
+    letter-spacing: 8px;
+}
+
+section.middle_one {
+    position: relative;
+}
+
+.account_box {
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translate(-51%, 25%);
+}
+#middle_one{
+    display: block;
+}
+#middle_two{
+    display: none;
+}
+
+
+.account_info {
+    background: #f1f1f1;
+    padding: 40px;
+    margin: 15px;
+    border-radius: 6px;
+}
+
+.account_info_header h3 {
+    text-align: center;
+  
+    color: #010330;
+    text-transform: uppercase;
+    font-family: 'Saira Condensed';
+    letter-spacing: 4px;
+}
+.account_info_header {
+    margin: 30px 0px;
+}
+div#border_account {
+    position: relative;
+}
+
+div#border_account::after {
+    position: absolute;
+    content: "";
+    width: 137px;
+    height: 2px;
+    background: #1a1a1e;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -50%);
+}
+.account_info_middle {
+    text-align: center;
+    margin: 47px 0px;
+}
+
+.Acc_deposit, .Acc_withdraw, .Acc_balance {
+    color: #fff;
+    background: #0089ffcf;
+    padding: 40px;
+    border-radius: 10px;
+    font-family: sans-serif;
+    letter-spacing: 2px;
+}
+.Acc_withdraw{
+    background:#115b7e;
+}
+.Acc_balance{
+    background: #ffc800;
+}
+.deposit_entry,.withdraw_entry {
+    padding: 26px;
+    text-align: center;
+    background: #5e68e5;
+    margin: 40px;
+    color: #fff;
+    border-radius: 5px;
+    font-family: 'Saira Condensed';
+}
+.withdraw_entry{
+    background:  #CB5EEE;
+}

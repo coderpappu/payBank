@@ -4,9 +4,103 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>PayBank</title>
 </head>
 <body>
-    
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                   <div class="bank_name_Title">
+                    <h3>PayBank</h3>
+                    <p>Save Your Money</p>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section id="middle_one">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="account_box">
+                        <div class="account_header">
+                            <h4>Your Account</h4>
+                        </div>
+                        <div class="login_account">
+                            <label for="">User Name</label><br>
+                            <input type="text" placeholder="Enter Your User Name"><br>
+                            <label for="">Your Password</label><br>
+                            <input type="text" placeholder="Enter your Password"><br><br>
+                            <button id="login">Login</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="middle_two">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="account_info">
+                        <div class="account_info_header">
+                            <h3> Your Account </h3>
+                            <div id="border_account"></div>
+                        </div>
+                        <div class="account_info_middle">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="Acc_deposit">
+                                        <h3>Deposit</h3>
+                                        <h4>$ <span id="deposit_entry_money">00</span></h4>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="Acc_withdraw">
+                                        <h3>Withdraw</h3>
+                                        <h4>$ <span id="withDrawMoney">00</span></h4>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="Acc_balance">
+                                        <h3>Balance</h3>
+                                        <h4>$ <span id="mainBalance">00</span></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="account_info_enter">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="deposit_entry">
+                                        <h5>Deposit Your Account</h5>
+                                        <input id="depositAmmount" type="number" placeholder="Enter Your Ammount"><br><br>
+                                        <button id="depositBtn">Deposit</button>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="withdraw_entry">
+                                        <h5>Withdraw Your Account</h5>
+                                        <input id="withdrawInputAmmount" type="number" placeholder="Enter Your Ammount"><br><br>
+                                       <button id="withdrawBtn">WithDraw</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/jq.js"></script>
+    <script src="js/bank.js"></script>
 </body>
 </html>
