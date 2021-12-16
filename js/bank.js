@@ -21,8 +21,6 @@ let withDrawSaveMoney = document.querySelector("#withDrawMoney");
 loginBtn.addEventListener("click", ()=>{
     middleOneBox.style.display ="none";
     middleTwoBox.style.display = "Block"
-    
-    console.log(date.getDate());
 });
 
 
@@ -30,45 +28,68 @@ loginBtn.addEventListener("click", ()=>{
 // money Add in Account
 depositBtn.addEventListener("click", ()=>{
     let depMoney = depositMoney.value;
-    let date = new Date;
-    let catchDate = date.getDate()
+    let depMoneyValue = depMoneyEntry.innerText;
+    let balanceValue = mainBalance.innerText;
+    // let date = new Date;
+    // let catchDate = date.getDate()
+
     if( depMoney < 100){
         alert("Sorry, Less than 100 rupees - you can not keep.")
     }
     else{
-    let depMoneyValue = depMoneyEntry.innerText;
-    let moneyDep = parseFloat(depMoney) + parseFloat(depMoneyValue)
-    
-    depMoneyEntry.innerText = moneyDep;
-    depositMoney.value = "";
-
-    let balanceValue = mainBalance.innerText;
-    console.log(mainBalance.innerText);
-    let subMainBalance = parseFloat(depMoney) + parseFloat(balanceValue);
-    mainBalance.innerText = subMainBalance;
-
+    depositAdd(depMoney, depMoneyValue)
+    balanceUpdate(depMoney, balanceValue)
     };
 
 });
+// deposit your money on your account 
+let depositAdd = (depositMoneyAdd, depositMoneyVal) =>{
+    let moneyDep = parseFloat(depositMoneyAdd) + parseFloat(depositMoneyVal) 
+    depMoneyEntry.innerText = moneyDep;
+    depositMoney.value = "";
+}
+
+// your deposit money add in your main balance
+let balanceUpdate = (userDep , balanceUpdate ) =>{
+    let subMainBalance = parseFloat(userDep) + parseFloat(balanceUpdate);
+    mainBalance.innerText = subMainBalance;
+}
 
 // money withdraw 
 withdrawBtn.addEventListener("click", ()=>{
-    let withDrawInMoney = withDrawInput.value;
+    let withDrawInMoney = parseFloat(withDrawInput.value);
     let withSMoney = withDrawSaveMoney.innerText;
-    let withDrawMoneySum = parseFloat(withDrawInMoney) + parseFloat(withSMoney);
-    withDrawSaveMoney.innerText = withDrawMoneySum;
-    withDrawInput.value = "";
+    let accountBalance = parseFloat(mainBalance.innerText);
 
+    if ( accountBalance === 0 ){
+        accountBalance.innerText = "00"
+    }
+    else{
+        if (withDrawInMoney < -0  || withDrawInMoney === 0 || accountBalance < withDrawInMoney ){
+            alert("Your Account have no money")
+        }
+        else{
+            withdrawMoneyAcc(withDrawInMoney, withSMoney)
+            withDrawAccMoney(accountBalance )
+        }
+    }
 
-    let accountBalance = mainBalance.innerText;
-    console.log(accountBalance);
-    let subBalance = parseFloat(accountBalance) - parseFloat(withDrawSaveMoney.innerText);
-    mainBalance.innerText = subBalance;
+   
+   
     
 })
 
+let withdrawMoneyAcc = (withInValue, withAccValue) =>{
+    let withDrawMoneySum = parseFloat(withInValue) + parseFloat(withAccValue);
+    withDrawSaveMoney.innerText = withDrawMoneySum;
+    withDrawInput.value = "";
+}
 
-
+let withDrawAccMoney = (accBalance) =>{
+    
+    let subBalance = parseFloat(accBalance) - parseFloat(withDrawSaveMoney.innerText);
+    mainBalance.innerText = subBalance;
+}
 
 
 
