@@ -1,7 +1,9 @@
 /* saira font link  */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Saira+Condensed:wght@100;200;300;400;500;600;700;900&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
 
-
+body{
+    font-family: Saira Condensed;
+}
 
 header {
     background: #f1f1f1;
@@ -27,8 +29,12 @@ section.middle_one {
 .account_box {
     position: absolute;
     left: 50%;
-    top: 20%;
+    top: 14%;
     transform: translate(-51%, 25%);
+    background: #ddd;
+    padding: 40px;
+    font-family: 'Saira Condensed';
+    border-radius: 5px;
 }
 #middle_one{
     display: block;
@@ -80,8 +86,8 @@ div#border_account::after {
     background: #0089ffcf;
     padding: 40px;
     border-radius: 10px;
-    font-family: sans-serif;
     letter-spacing: 2px;
+    box-shadow: -1px 1px 9px 4px #fff, 1px 1px 1px #fff;
 }
 .Acc_withdraw{
     background:#115b7e;
@@ -97,7 +103,115 @@ div#border_account::after {
     color: #fff;
     border-radius: 5px;
     font-family: 'Saira Condensed';
+    box-shadow: -1px 1px 9px 4px #fff, 1px 1px 1px #fff;
 }
 .withdraw_entry{
     background:  #CB5EEE;
+}
+
+.account_header h4 {
+    text-align: center;
+    letter-spacing: 2px;
+}
+.account_header h4 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.login_account label {
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: #06000c;
+}
+
+
+.login_account input {
+    width: 200px;
+    height: 34px;
+    padding: 14px;
+    border: none;
+    border-radius: 3px;
+    margin: 5px 0px;
+
+}
+.login_account {
+    border: 2px dotted #000;
+    padding: 50px;
+    position: relative;
+}
+button#login {
+    position: absolute;
+    left: 34%;
+    padding: 6px 30px;
+    background: #0095ff;
+    border: none;
+    font-size: 18px;
+    border-radius: 4px;
+    color: #fff;
+    margin-bottom: 13px;
+}
+.deposit_entry input,.withdraw_entry input{
+    /* width: 200px;
+    height: 41px; */
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+}
+
+button#depositBtn,#withdrawBtn {
+    padding: 5px 26px;
+    border: none;
+    border-radius: 3px;
+    background: #ffe000;
+}
+#withdrawBtn{
+    background-color: #ff8100;
+    color: #fff;
+
+}
+
+
+/* responsive web app  */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .Acc_deposit, .Acc_withdraw, .Acc_balance {
+        margin-bottom: 15px;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    
+    
+    
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .deposit_entry input, .withdraw_entry input {
+        
+        padding: 2px;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .deposit_entry input,.withdraw_entry input{
+        width: 200px;
+        height: 30px;
+        padding: 10px;
+       
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .deposit_entry input,.withdraw_entry input{
+        width: 200px;
+        height: 40px;
+        padding: 10px;
+       
+    }
 }

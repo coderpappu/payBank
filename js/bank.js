@@ -38,22 +38,13 @@ depositBtn.addEventListener("click", ()=>{
     }
     else{
     depositAdd(depMoney, depMoneyValue)
-    balanceUpdate(depMoney, balanceValue)
+    balanceUpdate( balanceValue,depMoney)
     };
 
 });
-// deposit your money on your account 
-let depositAdd = (depositMoneyAdd, depositMoneyVal) =>{
-    let moneyDep = parseFloat(depositMoneyAdd) + parseFloat(depositMoneyVal) 
-    depMoneyEntry.innerText = moneyDep;
-    depositMoney.value = "";
-}
 
-// your deposit money add in your main balance
-let balanceUpdate = (userDep , balanceUpdate ) =>{
-    let subMainBalance = parseFloat(userDep) + parseFloat(balanceUpdate);
-    mainBalance.innerText = subMainBalance;
-}
+
+
 
 // money withdraw 
 withdrawBtn.addEventListener("click", ()=>{
@@ -61,34 +52,40 @@ withdrawBtn.addEventListener("click", ()=>{
     let withSMoney = withDrawSaveMoney.innerText;
     let accountBalance = parseFloat(mainBalance.innerText);
 
-    if ( accountBalance === 0 ){
-        accountBalance.innerText = "00"
+    if (accountBalance < withDrawInMoney){
+        alert("You do not have sufficient money in your account")
     }
     else{
-        if (withDrawInMoney < -0  || withDrawInMoney === 0 || accountBalance < withDrawInMoney ){
-            alert("Your Account have no money")
+        if ( accountBalance === 0 ){
+            accountBalance.innerText = "00"
         }
         else{
-            withdrawMoneyAcc(withDrawInMoney, withSMoney)
-            withDrawAccMoney(accountBalance )
+            if (withDrawInMoney < -0  || withDrawInMoney === 0 || accountBalance < withDrawInMoney ){
+                alert("Your Account have no money")
+            }
+            else{
+                withdrawMoneyAcc(withDrawInMoney, withSMoney)
+                balanceUpdate(accountBalance, -1 * withDrawInMoney )
+            }
         }
-    }
-
-   
-   
-    
+    }   
 })
-
+// deposit your money on your account 
+let depositAdd = (depositMoneyAdd, depositMoneyVal) =>{
+    let moneyDep = parseFloat(depositMoneyAdd) + parseFloat(depositMoneyVal) 
+    depMoneyEntry.innerText = moneyDep;
+    depositMoney.value = "";
+}
 let withdrawMoneyAcc = (withInValue, withAccValue) =>{
     let withDrawMoneySum = parseFloat(withInValue) + parseFloat(withAccValue);
     withDrawSaveMoney.innerText = withDrawMoneySum;
     withDrawInput.value = "";
 }
 
-let withDrawAccMoney = (accBalance) =>{
-    
-    let subBalance = parseFloat(accBalance) - parseFloat(withDrawSaveMoney.innerText);
-    mainBalance.innerText = subBalance;
+// your deposit money add in your main balance and
+let balanceUpdate = ( balanceUpdate,  userDep) =>{
+    let subMainBalance =  parseFloat(balanceUpdate) + parseFloat(userDep) ;
+    mainBalance.innerText = subMainBalance;
 }
 
 
